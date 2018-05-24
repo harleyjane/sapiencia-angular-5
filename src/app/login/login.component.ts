@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DisplayService } from '../display.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private displayService:DisplayService){}
+
 
   ngOnInit() {
   }
 
+  setToken(){
+    this.displayService.token = 'Be happy';
+  }
 }
