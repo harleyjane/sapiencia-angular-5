@@ -6,20 +6,30 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DoAthingComponent } from './do-athing/do-athing.component';
 import { MakeAthingHappenService } from './make-athing-happen.service';
-import { DeleteComponent } from './delete/delete.component'
+import { DeleteComponent } from './delete/delete.component';
+import { StudentComponent } from './student/student.component';
+import { HttpModule } from '@angular/http';
+import { HttpFactoryService } from './http-factory.service';
+import { TeacherComponent } from './teacher/teacher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DoAthingComponent,
-    DeleteComponent
+    DeleteComponent,
+    StudentComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    
+
   ],
-  providers: [MakeAthingHappenService],
-  bootstrap: [AppComponent]
+  providers: [MakeAthingHappenService, HttpFactoryService],
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }

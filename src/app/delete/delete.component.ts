@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MakeAthingHappenService } from '../make-athing-happen.service';
+
 @Component({
   selector: 'app-delete',
   templateUrl: './delete.component.html',
@@ -11,7 +12,9 @@ export class DeleteComponent implements OnInit {
 
   ngOnInit() {
   }
+
 delete(){
 this.makeAthingHappenService.token = undefined;
 }
+
 }

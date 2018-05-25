@@ -1,5 +1,4 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { MakeAthingHappenService } from './make-athing-happen.service';
 
 describe('MakeAthingHappenService', () => {
