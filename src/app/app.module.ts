@@ -9,18 +9,27 @@ import { LoginComponent } from './login/login.component';
 import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
 import { MyNewServiceService } from './my-new-service.service';
 import { DeleteComponent } from './delete/delete.component';
+import { StudentComponent } from './student/student.component';
+import { HttpModule } from '@angular/http';
+import { HTTPFactoryService } from './httpfactory.service';
+import { TeacherComponent } from './teacher/teacher.component'
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MyNewComponentComponent,
     DeleteComponent,
+    StudentComponent,
+    TeacherComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
+    
   ],
-  providers: [MyNewServiceService],
+  providers: [MyNewServiceService, HTTPFactoryService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
