@@ -8,13 +8,10 @@ import { HttpfactoryService } from '../httpfactory.service';
 })
 export class StudentComponent implements OnInit {
 
-  
-
-  constructor(private httpfactoryservice: HttpfactoryService) {
+    constructor(private httpfactoryservice: HttpfactoryService) {
   }
   
-    
-  retrievestudent(){
+    retrievestudent(){
     this.httpfactoryservice.retrievestudent().subscribe(res=>{
       console.dir(res)
     })
