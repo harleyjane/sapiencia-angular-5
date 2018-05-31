@@ -11,6 +11,7 @@ import { StudentComponent } from './student/student.component';
 import { HttpModule } from '@angular/http';
 import { HttpFactoryService } from './http-factory.service';
 import { TeacherComponent } from './teacher/teacher.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TeacherComponent } from './teacher/teacher.component';
     DoAthingComponent,
     DeleteComponent,
     StudentComponent,
-    TeacherComponent
+    TeacherComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
