@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Binded by the component';
+
+  doThing(){
+    alert('DID IT!');
+  }
+
 }
