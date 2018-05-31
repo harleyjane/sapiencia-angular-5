@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {  routing } from './app.router';
 
 //Here you import services, components and resolvers.
 
@@ -17,7 +17,7 @@ import { HttpModule } from '@angular/http';
 import { HttpFactoryService } from './http-factory.service';
 import { TeacherComponent } from './teacher/teacher.component';
 import { DataComponent } from './data/data.component';
-
+import { HomeComponent } from './home/home.component'
 @NgModule({
   //Here in declarations  you have to add all the components (the cli does that for you)
   declarations: [
@@ -28,9 +28,11 @@ import { DataComponent } from './data/data.component';
     StudentComponent,
     TeacherComponent,
     DataComponent,
-    DisplayComponent
+    DisplayComponent,
+    HomeComponent
   ],
   imports: [
+    routing,
     BrowserModule,
     FormsModule,
     HttpModule,
