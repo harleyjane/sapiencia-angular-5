@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {  routing } from './app.router';
 
 //Here you import services, components and resolvers.
@@ -14,10 +14,15 @@ import { MakeAthingHappenService } from './make-athing-happen.service';
 import { DeleteComponent } from './delete/delete.component';
 import { StudentComponent } from './student/student.component';
 import { HttpModule } from '@angular/http';
-import { HttpFactoryService } from './http-factory.service';
+import { TeacherService } from './teacher/teacher.service';
 import { TeacherComponent } from './teacher/teacher.component';
 import { DataComponent } from './data/data.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HeaderBarComponent } from './header-bar/header-bar.component';
+import { TeacherInfoComponent } from './teacher/teacher-info/teacher-info.component';
+import { ListTeacherComponent } from './teacher/list-teacher/list-teacher.component';
+import { SubjectComponent } from './subject/subject.component'
 @NgModule({
   //Here in declarations  you have to add all the components (the cli does that for you)
   declarations: [
@@ -29,7 +34,12 @@ import { HomeComponent } from './home/home.component'
     TeacherComponent,
     DataComponent,
     DisplayComponent,
-    HomeComponent
+    HomeComponent,
+    NavBarComponent,
+    HeaderBarComponent,
+    TeacherInfoComponent,
+    ListTeacherComponent,
+    SubjectComponent
   ],
   imports: [
     routing,
@@ -39,7 +49,7 @@ import { HomeComponent } from './home/home.component'
     
 
   ],
-  providers: [MakeAthingHappenService, HttpFactoryService,AuthServiceService],
+  providers: [MakeAthingHappenService, TeacherService,AuthServiceService],
   bootstrap: [AppComponent],
   
 })

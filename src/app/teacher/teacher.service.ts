@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class HttpFactoryService {
+export class TeacherService {
 
   constructor(private http: Http) { }
 
@@ -28,6 +28,23 @@ export class HttpFactoryService {
       .catch((error: any) => Observable.throw(error.json(), error || 'server error'));
 
   }
+  listTeacher() {
+    return this.http.get('http://52.40.253.131:3000/auth/getAllTeachers').map((res: Response) =>{
+    return res.json();
+
+    })
+    .catch((error: any) => Observable.throw(error.json(), error || 'server error'));
+  }
+
+
+  createTeacher(teacher) {
+    return this.http.post('http://52.40.253.131:3000/users/teachers',{user:teacher,password:teacher.password}).map((res: Response) => {
+      return res.json();
+
+    })
+      .catch((error: any) => Observable.throw(error.json(), error || 'server error'));
+
+  }
+
 
 }
-

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpFactoryService } from '../http-factory.service';
+
 
 @Component({
   selector: 'app-student',
@@ -8,16 +8,17 @@ import { HttpFactoryService } from '../http-factory.service';
 })
 export class StudentComponent implements OnInit {
 
-  constructor(private httpFactoryService:HttpFactoryService ) { }
+  constructor( ) { }
 
   ngOnInit() {
   }
+  /*
   getStudent() {
     this.httpFactoryService.getStudent().subscribe(res=>{
       console.dir(res)
     })
 
   }
-
+*/
 
 }

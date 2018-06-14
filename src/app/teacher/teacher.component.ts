@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpFactoryService } from '../http-factory.service';
+
 
 @Component({
   selector: 'app-teacher',
@@ -7,17 +7,14 @@ import { HttpFactoryService } from '../http-factory.service';
   styleUrls: ['./teacher.component.css']
 })
 export class TeacherComponent implements OnInit {
+   
 
-  constructor( private httpFactoryService:HttpFactoryService) { }
+  constructor( ) { }
 
   ngOnInit() {
+    
   }
 
-  getTeacher() {
-    this.httpFactoryService.getTeacher().subscribe(res=>{
-      console.dir(res)
-    })
-
-}
+ 
 
 }
