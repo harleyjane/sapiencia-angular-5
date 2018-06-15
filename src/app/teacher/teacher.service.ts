@@ -38,7 +38,8 @@ export class TeacherService {
 
 
   createTeacher(teacher) {
-    return this.http.post('http://52.40.253.131:3000/users/teachers',{user:teacher,password:teacher.password}).map((res: Response) => {
+    console.log(teacher);
+    return this.http.post('http://52.40.253.131:3000/auth/registerTeacher',{user:teacher,password:teacher.password}).map((res: Response) => {
       return res.json();
 
     })

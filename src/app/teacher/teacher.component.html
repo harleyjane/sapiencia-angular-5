@@ -1,2 +1,14 @@
-<app-nav-bar></app-nav-bar>
-<app-teacher-info></app-teacher-info>
+<nav>
+        <app-nav-bar></app-nav-bar>
+
+</nav>
+<br>
+<br>
+<div class="row">
+    <div class="col">
+            <app-list-teacher  #teacherList  [listTittle]="'This is the list of teachers'"></app-list-teacher>
+    </div>
+    <div class="col">
+            <app-teacher-info #teacherInfo (newTeacherCreated)="sendTeacherToChild($event)" ></app-teacher-info>
+    </div>
+</div>

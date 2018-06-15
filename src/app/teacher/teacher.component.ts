@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 
 
 @Component({
@@ -7,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher.component.css']
 })
 export class TeacherComponent implements OnInit {
-   
-
+  @ViewChild('teacherList') teacherListComponent;
+  @ViewChild('teacherInfo') teacherInfoComponet;
   constructor( ) { }
 
   ngOnInit() {
     
+  }
+  sendTeacherToChild(newTeacher){
+    this.teacherListComponent.addTeacherToList(newTeacher);
   }
 
  

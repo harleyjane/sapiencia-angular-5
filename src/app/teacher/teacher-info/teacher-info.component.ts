@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { TeacherService } from '../teacher.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { TeacherService } from '../teacher.service';
 })
 export class TeacherInfoComponent implements OnInit {
   teacherlist = [];
-    teacher:any = {}
+  teacher:any = {};
+  @Output() newTeacherCreated = new EventEmitter();
 
   constructor(private teacherService:TeacherService ) { }
 
@@ -25,11 +26,10 @@ export class TeacherInfoComponent implements OnInit {
 
 }
 
-  createTeacher(teacher){
-    this.teacherService.createTeacher(teacher).subscribe(Response =>{
-      teacher.id = Response.id
-      this.teacherlist.push(teacher);
-      console.dir( this.teacherlist);
+  createTeacher(){
+    this.teacherService.createTeacher(this.teacher).subscribe(newTeacher =>{
+      this.newTeacherCreated.emit(newTeacher)
+      console.log("this is the new teacher " + newTeacher);
     })
   }
 
