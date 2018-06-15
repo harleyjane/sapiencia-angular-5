@@ -12,13 +12,5 @@ export class StudentComponent implements OnInit {
 
   ngOnInit() {
   }
-  /*
-  getStudent() {
-    this.httpFactoryService.getStudent().subscribe(res=>{
-      console.dir(res)
-    })
-
-  }
-*/
-
+ 
 }
