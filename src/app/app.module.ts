@@ -9,6 +9,7 @@ import { DisplayComponent } from './display/display.component';
 import { AuthServiceService } from './auth-service.service';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+<<<<<<< HEAD
 import { DoAthingComponent } from './do-athing/do-athing.component';
 import { MakeAthingHappenService } from './make-athing-happen.service';
 import { DeleteComponent } from './delete/delete.component';
@@ -28,11 +29,22 @@ import { SubjectListComponent } from './subject/subject-list/subject-list.compon
 import { SubjectInfoComponent } from './subject/subject-info/subject-info.component';
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentInfoComponent } from './student/student-info/student-info.component';
+=======
+import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
+import { MyNewServiceService } from './my-new-service.service';
+import { DeleteComponent } from './delete/delete.component';
+import { StudentComponent } from './student/student.component';
+import { HttpModule } from '@angular/http';
+import { HTTPFactoryService } from './httpfactory.service';
+import { TeacherComponent } from './teacher/teacher.component'
+
+>>>>>>> a5f0b86ba569cd39ee2151d2e0aafe90d6a7060a
 @NgModule({
   //Here in declarations  you have to add all the components (the cli does that for you)
   declarations: [
     AppComponent,
     LoginComponent,
+<<<<<<< HEAD
     DoAthingComponent,
     DeleteComponent,
     StudentComponent,
@@ -49,12 +61,19 @@ import { StudentInfoComponent } from './student/student-info/student-info.compon
     SubjectInfoComponent,
     StudentListComponent,
     StudentInfoComponent,
+=======
+    MyNewComponentComponent,
+    DeleteComponent,
+    StudentComponent,
+    TeacherComponent,
+>>>>>>> a5f0b86ba569cd39ee2151d2e0aafe90d6a7060a
   ],
   imports: [
     routing,
     BrowserModule,
     FormsModule,
     HttpModule
+<<<<<<< HEAD
 
     
 
@@ -64,3 +83,11 @@ import { StudentInfoComponent } from './student/student-info/student-info.compon
   
 })
 export class AppModule { TeacherComponent }
+=======
+    
+  ],
+  providers: [MyNewServiceService, HTTPFactoryService ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+>>>>>>> a5f0b86ba569cd39ee2151d2e0aafe90d6a7060a
