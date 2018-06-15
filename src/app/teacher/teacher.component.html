@@ -1,1 +1,27 @@
-<button (click)="getTeacher()">teacher</button>
+<app-nav-bar></app-nav-bar>
+
+<label>username</label>
+<input type="text" [(ngModel)]='teacher.username'>
+<br>
+<label>name</label>
+<input type="text" [(ngModel)]='teacher.name'>
+<br>
+<label>lastName</label>
+<input type="text" [(ngModel)]='teacher.lastName'>
+<br>
+<label>phoneNumber</label>
+<input type="text" [(ngModel)]='teacher.phoneNumber'>
+<br>
+<label>email</label>
+<input type="text" [(ngModel)]='teacher.email'>
+<br>
+<label>Password</label>
+<input type ="password" [(ngModel)]='teacher.password'>
+<br>
+<label>picture</label>
+<input type="text" [(ngModel)]='teacher.picture'>
+<br>
+<label>userType</label>
+<input type="text" [(ngModel)]='teacher.userType'>
+
+<button (click)="createTeacher">create Teacher</button>

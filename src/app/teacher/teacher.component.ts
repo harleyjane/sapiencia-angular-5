@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpFactoryService } from '../http-factory.service';
+import { Injectable, Component } from '@angular/core';
+import { Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Component({
   selector: 'app-teacher',
   templateUrl: './teacher.component.html',
   styleUrls: ['./teacher.component.css']
 })
-export class TeacherComponent implements OnInit {
+export class TeacherComponent {
 
-  constructor( private httpFactoryService:HttpFactoryService) { }
+  teacherlist: any;
+  teacherist: any;
+  httpFactoryService: any;
+  constructor(private http: Http) { }
 
   ngOnInit() {
-  }
-
-  getTeacher() {
-    this.httpFactoryService.getTeacher().subscribe(res=>{
-      console.dir(res)
+    this.httpFactoryService.listTeacher().subscribe(res=>{
+      this.teacherlist = res;
     })
-
-}
-
+  }
 }

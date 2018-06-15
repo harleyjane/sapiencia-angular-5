@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {  routing } from './app.router';
 
 //Here you import services, components and resolvers.
@@ -17,7 +17,17 @@ import { HttpModule } from '@angular/http';
 import { HttpFactoryService } from './http-factory.service';
 import { TeacherComponent } from './teacher/teacher.component';
 import { DataComponent } from './data/data.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HeaderBarComponent } from './header-bar/header-bar.component'
+import { TeacherService } from './teacher/teacher.service';
+import { SubjectComponent } from './subject/subject.component';
+import { TeacherListComponent } from './teacher/teacher-list/teacher-list.component';
+import { TeacherInfoComponent } from './teacher/teacher-info/teacher-info.component';
+import { SubjectListComponent } from './subject/subject-list/subject-list.component';
+import { SubjectInfoComponent } from './subject/subject-info/subject-info.component';
+import { StudentListComponent } from './student/student-list/student-list.component';
+import { StudentInfoComponent } from './student/student-info/student-info.component';
 @NgModule({
   //Here in declarations  you have to add all the components (the cli does that for you)
   declarations: [
@@ -29,18 +39,28 @@ import { HomeComponent } from './home/home.component'
     TeacherComponent,
     DataComponent,
     DisplayComponent,
-    HomeComponent
+    HomeComponent,
+    NavBarComponent,
+    HeaderBarComponent,
+    SubjectComponent,
+    TeacherListComponent,
+    TeacherInfoComponent,
+    SubjectListComponent,
+    SubjectInfoComponent,
+    StudentListComponent,
+    StudentInfoComponent,
   ],
   imports: [
     routing,
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule
+
     
 
   ],
-  providers: [MakeAthingHappenService, HttpFactoryService,AuthServiceService],
+  providers: [MakeAthingHappenService, HttpFactoryService,AuthServiceService, TeacherService],
   bootstrap: [AppComponent],
   
 })
-export class AppModule { }
+export class AppModule { TeacherComponent }

@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Response } from '@angular/http';
+import { Response, Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Http,} from '@angular/http';
+import { HttpFactoryService } from '../http-factory.service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class HttpFactoryService {
+export class TeacherService {
 
-  constructor(private http: Http) { }
+  http: any;
+  Http: any;
+  teacherlist: any;
+  constructor(private httpFactoryService: HttpFactoryService) { }
 
 
   getStudent() {
@@ -29,20 +32,19 @@ export class HttpFactoryService {
 
   }
   listTeacher() {
-    return this.http.get('http://52.40.253.131:3000/auth/getAllTeachers').map((res: Response) =>{
-    return res.json();
-
-    })
-    .catch((error: any) => Observable.throw(error.json(), error || 'server error'));
-  }
-
-  createTeacher(teacher) {
-    return this.http.post('http://52.40.253.131:3000/users/teachers',{ 'user':teacher, password:teacher.password}).map((res: Response) => {
+    return this.Http.get('http://52.40.253.131:3000/auth/getAllTeachers').map((res: Response) => {
       return res.json();
 
     })
       .catch((error: any) => Observable.throw(error.json(), error || 'server error'));
-
   }
 
+  createTeacher(teacher) {
+    this.httpFactoryService.createTeacher(teacher).subscribe(Response => {
+      teacher.id = Response.id
+      this.teacherlist.push(teacher);
+      console.dir(this.teacherlist);
+    })
+    .catch((error: any) => Observable.throw(error.json(), error || 'server error'));
+}
 }
