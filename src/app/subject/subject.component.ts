@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-subject',
@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('subjectList') subjectListComponent;
+  @ViewChild('subjectInfo') subjectInfoComponet;
+  constructor( ) { }
 
   ngOnInit() {
+    
+  }
+  sendSubjectToChild(newSubject){
+    this.subjectListComponent.addSubjectToList(newSubject);
   }
 
+ 
+
 }
+

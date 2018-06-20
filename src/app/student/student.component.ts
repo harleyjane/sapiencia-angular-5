@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-student',
@@ -7,18 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-
+  @ViewChild('studentList') studentListComponent;
+  @ViewChild('studentInfo') studentInfoComponet;
   constructor( ) { }
 
   ngOnInit() {
   }
-  /*
-  getStudent() {
-    this.httpFactoryService.getStudent().subscribe(res=>{
-      console.dir(res)
-    })
-
+  sendStudentToChild(newStudent){
+    this.studentListComponent.addStudentToList(newStudent);
   }
-*/
 
 }

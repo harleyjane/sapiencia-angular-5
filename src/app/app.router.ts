@@ -10,8 +10,7 @@ import { StudentComponent } from './student/student.component';
 
 // Route Configuration
 export const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'home' },
-    {path: 'home', component:HomeComponent},
+    { path: '', pathMatch: 'full', redirectTo: 'teacher' },
     { path: 'teacher', component: TeacherComponent },
     {path: 'login', component: LoginComponent },
     {path: 'student', component: StudentComponent },

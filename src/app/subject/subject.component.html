@@ -1,3 +1,17 @@
-<p>
-  subject works!
-</p>
+<nav>
+  <app-nav-bar></app-nav-bar>
+
+
+</nav>
+<br>
+<br>
+<div class="row">
+<div class="col">
+      <app-list-subject  
+      #subjectList  [listTittle]="'This is the list of subjects'"></app-list-subject>
+</div>
+<div class="col">
+      <app-info-subject
+      #subjectInfo (newSubjectCreated)="sendSubjectToChild($event)" ></app-info-subject>
+</div>
+</div>

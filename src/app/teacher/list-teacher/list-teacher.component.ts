@@ -7,12 +7,14 @@ import { TeacherService } from '../teacher.service';
   styleUrls: ['./list-teacher.component.css']
 })
 export class ListTeacherComponent implements OnInit {
-  @Input('listTittle') listTittle;
+  @Input('listTittle') listTitle;
   teacherList:Array<any>;
   constructor(private teacherService:TeacherService) { }
 
   ngOnInit() {
-this.teacherList = []
+    this.teacherService.listTeacher().subscribe(teachersResponse=>{
+      this.teacherList = teachersResponse;
+    })
   }
   addTeacherToList(newTeacher){
     this.teacherList.push(newTeacher);

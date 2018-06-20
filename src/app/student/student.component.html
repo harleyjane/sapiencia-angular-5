@@ -1,20 +1,15 @@
+<nav>
 <app-nav-bar></app-nav-bar>
-<label>user name</label>
-<input type="text" [(ngModel)]="teacher.username"> 
-<br>
-<label>name</label>
-<input type="text" [(ngModel)]="teacher.name">
-<br>
-<label>lastName</label>
-<input type="text" [(ngModel)]="teacher.lastName">
-<br>
-<label>phoneNumber</label>
-<input type="text" [(ngModel)]="teacher.phoneNumber">
-<br>
-<label>email</label>
-<input type="text" [(ngModel)]="teacher.email">
-<br>
-<label>password</label>
-<input type="password" [(ngModel)]="teacher.pasword">
 
-<button (click)="createTeacher">create teacher</button>
+
+</nav>
+<br>
+<br>
+<div class="row">
+    <div class="col">
+            <app-list-student  #teacherList  [listTittle]="'This is the list of students'"></app-list-student>
+    </div>
+    <div class="col">
+            <app-student-info #teacherInfo (newTeacherCreated)="sendStudentToChild($event)" ></app-student-info>
+    </div>
+</div>
